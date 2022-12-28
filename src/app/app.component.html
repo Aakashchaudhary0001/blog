@@ -62,9 +62,9 @@
 <input type="text" name="user-mame" [value]=name [disabled]=disable>
 <br>
 <p>------------------------------------------------------------------------------------------------</p> -->
-<h1>If - else condition</h1>
+<!-- <h1>If - else condition</h1> -->
 <!-- <h1 *ngIf="show;then ifBlock else elseBlock"></h1> -->
-<h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
+<!-- <h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
     
 <ng-template #ifBlock>
     <h1>If  condition</h1>
@@ -72,5 +72,20 @@
 
 <ng-template #elseBlock>
      <h1>Else Condition</h1>
-</ng-template>
+</ng-template> -->
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
 
+<h1>#16 Multiple condition or else if </h1>
+<ng-template [ngIf]="color==='red'">
+    <h1 style="color: red;">Red Color</h1>
+
+</ng-template>
+<ng-template [ngIf]="color==='blue'">
+    <h1 style="color: blue;">Blue Color</h1>
+
+</ng-template>
+<ng-template [ngIf]="color==='black'">
+    <h1 style="color: black;">Black Color</h1>
+
+</ng-template>

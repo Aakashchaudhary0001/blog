@@ -10,6 +10,7 @@ export class AppComponent {
   name= "Neeraj"
   disable=false;
   show="yes";
+  color="blue"
   getData(val:string){
     console.warn(val);
     }
