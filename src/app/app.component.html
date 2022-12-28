@@ -52,7 +52,7 @@
 <h1 class="heading">{{title}}</h1>
 <app-login></app-login>
 <br> -->
-<p>------------------------------------------------------------------------------------------------</p>
+<!-- <p>------------------------------------------------------------------------------------------------</p>
 <h1>#14 Property Binding </h1>
 <br>
 <h1>{{title}}</h1>
@@ -60,5 +60,17 @@
 <input type="text" name="user-mame" value={{name}} disabled={{disable}}>
 <br> <br>
 <input type="text" name="user-mame" [value]=name [disabled]=disable>
+<br>
+<p>------------------------------------------------------------------------------------------------</p> -->
+<h1>If - else condition</h1>
+<!-- <h1 *ngIf="show;then ifBlock else elseBlock"></h1> -->
+<h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
+    
+<ng-template #ifBlock>
+    <h1>If  condition</h1>
+</ng-template>
 
+<ng-template #elseBlock>
+     <h1>Else Condition</h1>
+</ng-template>
 

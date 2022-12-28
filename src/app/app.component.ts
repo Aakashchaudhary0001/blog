@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'Property Bindings ';
   name= "Neeraj"
   disable=false;
+  show="yes";
   getData(val:string){
     console.warn(val);
     }
