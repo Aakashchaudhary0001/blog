@@ -6,17 +6,22 @@ import { UserListComponent } from './user-list/user-list.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
+import { HeaderComponent } from './header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     StudentListComponent,
-    CountryListComponent
+    CountryListComponent,
+    HeaderComponent,
+    
   ],
   imports: [
     BrowserModule,
-    UserAuthModule
+    UserAuthModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

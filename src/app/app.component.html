@@ -1,5 +1,5 @@
-<!-- <h1>{{title}}</h1> -->
-<!-- <app-user-list></app-user-list>
+<h1>{{title}}</h1>
+<app-user-list></app-user-list>
 <app-student-list></app-student-list>
 <app-country-list></app-country-list>
 <app-login></app-login>
@@ -33,26 +33,26 @@
 <h1 (mouseleave)="getData('leave')">Neeraj Sangwan ( mouseleave event)</h1>
 <br>
 <p>------------------------------------------------------------------------------------------------</p>
-<h1>#11 Get Text Box value and Print</h1> -->
+<h1>#11 Get Text Box value and Print</h1> 
 
-<!-- <input type="text" #box placeholder="Enter Name" name="name"/>
+<input type="text" #box placeholder="Enter Name" name="name"/>
 <button (click)="getValue(box.value)">click</button>
-<p> Box Value is : {{displayVal}} </p> -->
+<p> Box Value is : {{displayVal}} </p>
 
-<!-- <p>------------------------------------------------------------------------------------------------</p>
+<p>------------------------------------------------------------------------------------------------</p>
 <h1>#12 Increment and Decrement Buttons</h1>
 <br>
 <button (click)="counter('minus')">--</button>
 <p>count:{{count}}</p>
 <button (click)="counter('add')">++</button>
-<br> -->
-<!-- <p>------------------------------------------------------------------------------------------------</p>
+<br> 
+ <p>------------------------------------------------------------------------------------------------</p>
 <h1>#13 Basic Rule of Style </h1>
 <br>
 <h1 class="heading">{{title}}</h1>
 <app-login></app-login>
-<br> -->
-<!-- <p>------------------------------------------------------------------------------------------------</p>
+<br> 
+<p>------------------------------------------------------------------------------------------------</p>
 <h1>#14 Property Binding </h1>
 <br>
 <h1>{{title}}</h1>
@@ -61,10 +61,10 @@
 <br> <br>
 <input type="text" name="user-mame" [value]=name [disabled]=disable>
 <br>
-<p>------------------------------------------------------------------------------------------------</p> -->
-<!-- <h1>If - else condition</h1> -->
-<!-- <h1 *ngIf="show;then ifBlock else elseBlock"></h1> -->
-<!-- <h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
+<p>------------------------------------------------------------------------------------------------</p>
+<h1>If - else condition</h1> -->
+<h1 *ngIf="show;then ifBlock else elseBlock"></h1> -->
+<h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
     
 <ng-template #ifBlock>
     <h1>If  condition</h1>
@@ -72,7 +72,7 @@
 
 <ng-template #elseBlock>
      <h1>Else Condition</h1>
-</ng-template> -->
+</ng-template> 
 <br>
 <p>------------------------------------------------------------------------------------------------</p>
 
@@ -86,6 +86,61 @@
 
 </ng-template>
 <ng-template [ngIf]="color==='black'">
-    <h1 style="color: black;">Black Color</h1>
+    <h1 style="color: blac;">Black Color</h1>
 
 </ng-template>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<h1> Switch Case</h1>
+<div [ngSwitch]="switchcolor">
+    <h1 *ngSwitchCase="'red'" style="color: red;">Red Color</h1>
+    <h1 *ngSwitchCase="'blue'" style="color: blue;">Blue Color</h1>
+    <h1 *ngSwitchCase="'brown'" style="color: brown;">Brown Color</h1>
+    <h1 *ngSwitchCase="'orange'" style="color: orange;">Orange Color</h1>
+    <h1 *ngSwitchCase="'skyblue'" style="color:skyblue;">Skyblue Color</h1>
+    <h1 *ngSwitchDefault>Unknow Color</h1>
+</div>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<h1>For Loop # 18</h1>
+<h3 *ngFor="let item of loopuser">Name is : {{item}}</h3>
+<h3 *ngFor="let item of loopuserdetails">{{item.name}}--{{item.email}}--{{item.phone}}</h3>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<h3> Nesteed loop # 19
+    <br>1 Make Array 
+    <br>2 Apply for Loop on it
+    <br>3 Make Nested Array
+    <br>4 Apply Loop on Nested Array
+    <br>5 Interview Questions
+    </h3>
+    <br>
+    <ul *ngFor="let user of nestedloopuser">
+        <li>{{user.name}}</li>
+        <li>{{user.phone}}</li>
+        <li>Social Accounts</li>
+        <ul *ngFor="let account of user.socialAccounts">
+            <li>
+                {{account}}
+            </li>
+
+        </ul>
+
+    </ul>
+    <br>
+<p>------------------------------------------------------------------------------------------------</p>
+<h2>Style Binding # 20 </h2>
+<h1 [style.color]="color20" [style.backgroundColor]="bgColor">Style Binding # 20</h1>
+<button (click)="updateColor()">updateColor</button>
+
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<h2>#21 Header --> make a header component, add image and manu, add style, interview questions</h2>
+<app-header></app-header>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<h2>Toggle Element #22 </h2>
+<button (click)="toggle()">Toggle</button>
+<h2 *ngIf="displayb">
+    Heading Tag
+</h2>
