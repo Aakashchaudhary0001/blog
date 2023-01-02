@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Property Bindings ';
+  title = 'Angular Tutorial ';
   name= "Neeraj"
   disable=false;
   show="yes";
@@ -53,5 +53,45 @@ export class AppComponent {
     toggle(){
         this.displayb=!this.displayb
     }
+    list:any[]=[];
+    addTask(item:string){
+      
+      this.list.push({id:this.list.length,name:item});
+      console.warn(this.list);
+    }
+    removeTask(id:number){
+      console.warn(id);
+      this.list=this.list.filter(item=>item.id!==id)
+      
+    }
+    data=0
+    updatChild(){
+      this.data= Math.floor(Math.random()*10)
+    }
+    userDetails=[
+      {name:'Anil Sidhu',email: 'anil@gmail.com'},
+      {name:'Neeraj kumar',email: 'neeraj@gmail.com'},
+      {name:'Amar verma',email: 'amar@gmail.com'},
+      {name:'viaks dagar',email: 'anil@gmail.com'},
+    ]
+    datab="x";
+    updateData(item:string){
+      console.warn(item);
+      this.datab=item;
+    }
+    namec:any
+    getValk(item:any){
+      console.warn(item);
+      }
 
+      today=Date()
+      userd={
+        name:'neeraj',
+        age: 42
+      }
+      titleb='Advancepipes'
+      userLogin(item:any){
+        console.warn(item);
+        
+      }
 }

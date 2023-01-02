@@ -8,6 +8,12 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChildComponent } from './child/child.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ChildBComponent } from './child-b/child-b.component';
+import {FormsModule} from '@angular/forms';
+import { UsdInrPipe } from './pipes/usd-inr.pipe'
+
 
 @NgModule({
   declarations: [
@@ -16,13 +22,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StudentListComponent,
     CountryListComponent,
     HeaderComponent,
+    ChildComponent,
+    UserDetailsComponent,
+    ChildBComponent,
+    UsdInrPipe,
     
   ],
   imports: [
     BrowserModule,
     UserAuthModule,
-    NgbModule
-  ],
+    NgbModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -144,3 +144,182 @@
 <h2 *ngIf="displayb">
     Heading Tag
 </h2>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<h2> Add BootStrap #23 </h2>
+<br>
+<p>
+	<ngb-alert [dismissible]="false">
+		<strong>Warning!</strong> Better check yourself, you're not looking too good.
+	</ngb-alert>
+</p>
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+	<ngb-panel title="Simple">
+		<ng-template ngbPanelContent>
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+			officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+			moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+			keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+			vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+			heard of them accusamus labore sustainable VHS.
+		</ng-template>
+	</ngb-panel>
+	<ngb-panel>
+		<ng-template ngbPanelTitle>
+			<span>&#9733; <b>Fancy</b> title &#9733;</span>
+		</ng-template>
+		<ng-template ngbPanelContent>
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+			officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+			moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+			keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+			vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+			heard of them accusamus labore sustainable VHS.
+		</ng-template>
+	</ngb-panel>
+	<ngb-panel title="Disabled" [disabled]="true">
+		<ng-template ngbPanelContent>
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+			officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+			moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+			keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+			vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+			heard of them accusamus labore sustainable VHS.
+		</ng-template>
+	</ngb-panel>
+</ngb-accordion>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2>Todo List with Angular </h2>
+<br>
+<input type="text" placeholder="Enter New Task" #task />
+<br><br>
+<button (click)="addTask(task.value)">Add Task</button>
+<ul *ngFor="let item of list ">
+    <li>{{item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
+</ul>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2># 26 Send Data Parent to Child Component</h2>
+<app-child [item]="data"></app-child>
+<button (click)="updatChild()">Update Child Component</button>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2>#27 Resusable Component</h2>
+<ul *ngFor="let user of userDetails">
+    <app-user-details [item]="user"></app-user-details> 
+    <!-- copy this line and paist anywhere for reusing data  --></ul>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2>#28 Send Data Child to Parent Component</h2>
+<app-child-b (updateDataEvent)="updateData($event)"></app-child-b>
+<h2>{{datab}}</h2>
+
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2> # 29 Two Way Binding ( On same time to display and update property is called two way binding</h2>
+<input type="text" [(ngModel)]="namec">
+<h3>{{namec}}</h3>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2># 30 Template Reference Variable</h2>
+<input type="text" #userbox>
+<button (click)="getValk(userbox.value)">Call Function</button>
+<br><br>
+<input type="text" #userbox>
+<button (click)="getValk(userbox)">Call Function</button>
+<br><br>
+<input type="text" #userbox name="user" placeholder="Enter user name">
+<button (click)="getValk(userbox)">Call Function</button>
+<br><br>
+<input type="text" #userbox name="user" placeholder="Enter user name">
+<button (click)="getValk(userbox.placeholder)">Call Function</button>
+
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2>Basic of TS for Angular</h2>
+ <h2>Pending</h2>
+ <br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2>Basic of Pipes</h2>
+<h2>{{title | uppercase}}</h2>
+<h2>{{title | lowercase}}</h2>
+<h2>{{title}}</h2>
+<h2>{{today | date : 'fullDate'}}</h2>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2>Advance Pipes</h2>
+<h2>{{titleb | slice : 3 : 6 | uppercase}}</h2>
+<h2>{{userd | json | uppercase}}</h2>
+<h2>{{2000.3000 | number : '2.2-3'}}</h2>
+<h2>{{20 | currency:'INR'}}</h2>
+
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<H2>Custom Pipes</H2>
+<h2>{{20 | usdInr }}</h2>
+<h2>{{20 | usdInr : 72 }}</h2>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<h2>
+    # 35 Form Introduction <br> Why we use forms. <br>types of forms. <br>
+    What we learn about form in upcoming video. <br> Forms Data flow.
+    <br> Interview Question. <br> <br>----- Forms Use --------- <br>
+    1 Submit any kind of information to Database. <br>
+    2 But angular can not connect to Database. <br>
+    3 So we send data to API <br>
+    4 And API update the databse <br>
+    5 Example <br>
+    * Login <br>
+    * Sign Up <br>
+    * Post <br>
+    * google search is also a type of form <br>
+    <br>
+    ---------- Forms Type in Angular --------- <br>
+    1 Template-driven form. <br> ------> Mostly work done in the Component template. <br>
+    2 Reactive form <br>
+    --------> Mostly work done in component class.
+    <br><br>
+    --------- What we learn In Forms ---------- <br>
+    * How to make forms. <br>
+    * How to get Data from forms. <br>
+    * How to add validations <br>
+    * How to show error message <br>
+    * How to call API <br>
+    * How to show pre-fill forms <br> <br>
+    ------- Data Flow with Forms --------- <br>
+    Template --> Class --> Service --> Database <br>
+<br>
+<p>------------------------------------------------------------------------------------------------</p>
+<br>
+<br>
+<h2> # 35 Template Driven Form
+    * What are template-driven forms? <br>
+    * Make simple form. <br>
+    * Get form Value in ts file. <br>
+    * Interview Questions <br>
+    <br>
+    What is Template Driven file  <br>
+    Ans: Forms that handling by template-driven file(app.component.html file ). <br>
+    * app.component.ts file  is called "Class File"
+    <br><br><br>
+    <form #loginForm="ngForm" (ngSubmit)=userLogin(loginForm.value)> 
+    <input type="text" placeholder="Enter Name" name="name" ngModel>
+    <br><br>
+    <input type="password" placeholder="Enter Password" name="password" ngModel>
+    <br><br>
+    <button>Login</button>
+    </form>
+    <br><br>
+    <button (click)=userLogin(loginForm.value)>Out Side Login</button>
