@@ -12,7 +12,11 @@ import { ChildComponent } from './child/child.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ChildBComponent } from './child-b/child-b.component';
 import {FormsModule} from '@angular/forms';
-import { UsdInrPipe } from './pipes/usd-inr.pipe'
+import { UsdInrPipe } from './pipes/usd-inr.pipe';
+import { ModuleAModule } from './module-a/module-a.module';
+import { ModuleBModule } from './module-b/module-b.module';
+import { ModuleCModule } from './module-c/module-c.module';
+
 
 
 @NgModule({
@@ -25,11 +29,13 @@ import { UsdInrPipe } from './pipes/usd-inr.pipe'
     ChildComponent,
     UserDetailsComponent,
     ChildBComponent,
-    UsdInrPipe,
-    
+    UsdInrPipe,    
   ],
   imports: [
     BrowserModule,
+    ModuleAModule,
+    ModuleBModule,
+    ModuleCModule,
     UserAuthModule,
     NgbModule,FormsModule],
   providers: [],
