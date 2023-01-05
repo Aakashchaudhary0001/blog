@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-b2',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class B2Component implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
+  
+
+  
+  loginForm = this.formBuilder.group({
+    name:['', Validators.required],
+    email:['', Validators.required],
+    password:['', Validators.required],
+    number:['', Validators.required],
+    date:['', Validators.required],
+    check1:[false, Validators.required],
+    check2:[false, Validators.required],
+    radio:['Delhi', Validators.required],
+  });
+
+  userForm() {
+    // console.warn(this.loginForm.value);
+
+  }
+  @Output() updateDataEvent= new EventEmitter<any>();
 
 }

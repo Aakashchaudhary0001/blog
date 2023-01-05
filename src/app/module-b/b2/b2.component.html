@@ -1,1 +1,60 @@
-<p>b2 works!</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="userForm()">
+    <div class="mb-3">
+        <label for="name" class="form-label">Enter Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" formControlName="name">
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password">
+    </div>
+
+    <div class="mb-3">
+        <label for="number" class="form-label">Enter Number</label>
+        <input type="number" class="form-control" id="number" aria-describedby="numberHelp" formControlName="number">
+        <div id="numberHelp" class="form-text">Enter numbers only.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" formControlName="date">
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="check1" formControlName="check1">
+        <label class="form-check-label" for="check1">Check Cars</label>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="check2" formControlName="check2">
+        <label class="form-check-label" for="check2">Check Buses</label>
+    </div>
+
+    <div class="mb-3 form-group">
+        <input class="form-group" formControlName="radio" [value]="'Delhi'" type="radio" id="flexRadioDefault1">
+        <label class="form-group mr- text-success" for="flexRadioDefault1">
+            Delhi
+        </label>
+    </div>
+    <div class="mb-3 form-group">
+        <input class="form-group" formControlName="radio" [value]="'Mumbai'" type="radio" id="flexRadioDefault2">
+        <label class="form-group mr- text-danger" for="flexRadioDefault2">
+            Mumbai
+        </label>
+    </div>
+    <div class="mb-3 form-group">
+        <input class="form-group" formControlName="radio" [value]="'Chennai'" type="radio" id="flexRadioDefault3">
+        <label class="form-group mr- text-warning" for="flexRadioDefault3">
+            Chennai
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="updateDataEvent.emit(loginForm.value)">Submit</button>
+</form>

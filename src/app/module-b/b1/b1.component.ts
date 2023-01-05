@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class B1Component implements OnInit {
 
+  data: any={};
+  titlesList: any=[];
   constructor() { }
 
   ngOnInit(): void {
+  }
+  updateData(value:any){
+    console.log(value);
+    this.data=value;
+    this.titlesList = Object.values(value);
   }
 
 }

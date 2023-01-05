@@ -1,1 +1,15 @@
-<p>b1 works!</p>
+<p>Data sending from B2 to B1</p>
+<h2>Send data from child to parent</h2>
+<app-b2 (updateDataEvent)="updateData($event)"></app-b2>
+
+<h1>here is b1 com</h1>
+<!-- <div *ngIf="data">
+    {{data.name}} -->
+<div>
+    <div *ngFor="let d of titlesList">
+        {{d}}
+    </div>
+    
+</div>
+
+<h1>here  b1 com ends</h1>

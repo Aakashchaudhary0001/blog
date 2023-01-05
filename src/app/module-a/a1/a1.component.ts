@@ -12,4 +12,11 @@ export class A1Component implements OnInit {
   ngOnInit(): void {
   }
 
+  data={
+    name: "Amit Kumar",
+    email: "test@gmail.com",
+    phone: 123456,
+  }
+  
+
 }
