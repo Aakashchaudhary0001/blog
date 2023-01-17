@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-a1',
@@ -11,5 +11,10 @@ export class A1Component implements OnInit {
 
   ngOnInit(): void {
   }
+  userLogin(item:any){
+    console.warn(item);
+    
+  }
+  @Output() updateDataEvent= new EventEmitter<any>();
 
 }

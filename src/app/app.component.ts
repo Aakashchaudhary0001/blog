@@ -94,4 +94,24 @@ export class AppComponent {
         console.warn(item);
         
       }
+      listb:any[]=[];
+      addTaskb(item:string){
+        this.list.push({id:this.list.length,name:item});
+        console.warn(this.listb);
+        }
+      removeTaskb(id:number){
+        console.warn(id);
+        this.listb=this.listb.filter(item=>item.id!==id)
+
+        
+      }
+
+      looptry=[        
+       { user: 'Neeraj', age:42, mailid:'neerajsangwan@gamil.com',},
+       { user: 'Neeraj', age:42, mailid:'neerajsangwan@gamil.com',},
+       { user: 'Neeraj', age:42, mailid:'neerajsangwan@gamil.com',},
+       { user: 'Neeraj', age:42, mailid:'neerajsangwan@gamil.com',},
+        
+
+     ]
 }

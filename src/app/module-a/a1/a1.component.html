@@ -1,1 +1,8 @@
-<p>a1 works!</p>
+<form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+    <input type="text " placeholder="Enter Name" name="name" ngModel>
+    <br><br>
+    <input type="password" placeholder="Enter Password" name="password" ngModel>
+    <br>
+    <button (click)="updateDataEvent.emit(loginForm.value)">Login</button>
+
+</form>
