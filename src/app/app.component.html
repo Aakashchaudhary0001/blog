@@ -1,4 +1,6 @@
-<app-header-main></app-header-main>
+<!-- <app-header-main></app-header-main> -->
+<app-a2> *ngFor="let d in datab"</app-a2>
+
 <h1>{{title}}</h1>
 <app-user-list></app-user-list>
 <app-student-list></app-student-list>
@@ -192,12 +194,12 @@
 <br>
 <p>------------------------------------------------------------------------------------------------</p>
 <br>
-<h2>Todo List with Angular </h2>
+<h2> # 25 Todo List with Angular </h2>
 <br>
 <input type="text" placeholder="Enter New Task" #task />
 <br><br>
 <button (click)="addTask(task.value)">Add Task</button>
-<ul *ngFor="let item of list ">
+<ul *ngFor="let item of list "> <br>
     <li>{{item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
 </ul>
 <br>
@@ -305,7 +307,7 @@
 <p>------------------------------------------------------------------------------------------------</p>
 <br>
 <br>
-<h2> # 35 Template Driven Form
+<!-- <h2> # 35 Template Driven Form
     * What are template-driven forms? <br>
     * Make simple form. <br>
     * Get form Value in ts file. <br>
@@ -329,3 +331,18 @@
 
 <br><br>
     <app-footer></app-footer>
+
+    <br>
+   <p>----------------------------------------------------------------------------</p>
+    <br>
+
+    <h2>Todo List </h2>
+    <input type="text" placeholder="Enter New Task" #task>
+    <br>
+    <br>
+    <button (click)="addTaskb(task.value)">Add Task</button>
+    <ul *ngFor="let item of listb ">
+        <li>{{item.name}} <button (click)="removeTaskb(item.id)">Remove</button></li>
+    </ul> -->
+    <h2>Helloooooooooooooooooooo</h2>
+    <h3 *ngFor="let item of looptry"> User name: {{item.user}}</h3>

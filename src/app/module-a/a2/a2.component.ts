@@ -11,5 +11,17 @@ export class A2Component implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  titlesList: any=[ ];
+  updateData(item:any){
+    console.warn(item);
+    this.
+    titlesList = Object.values(item);
+    
+  }
+  
+  
+
+  
 
 }
