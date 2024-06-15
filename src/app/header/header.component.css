@@ -1,20 +1,4 @@
-nav img{
-    width: 70px;
-}
-nav{
-    background-color: skyblue;
-    padding: 25px;
-}
-ul{
-    float: right;
-    list-style-type: none;
-}
-ul li {
-    display: inline-block;
-    padding: 10px;
-}
-li a {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
+.container{
+    margin-right: 5px;
+    margin-left: 5px;
+   }

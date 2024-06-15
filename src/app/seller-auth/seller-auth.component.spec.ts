@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserListComponent } from './user-list.component';
+import { SellerAuthComponent } from './seller-auth.component';
 
-describe('UserListComponent', () => {
-  let component: UserListComponent;
-  let fixture: ComponentFixture<UserListComponent>;
+describe('SellerAuthComponent', () => {
+  let component: SellerAuthComponent;
+  let fixture: ComponentFixture<SellerAuthComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserListComponent ]
+      declarations: [ SellerAuthComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserListComponent);
+    fixture = TestBed.createComponent(SellerAuthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
