@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { HttpApiService } from './http.service';
 import { Observable } from 'rxjs';
@@ -19,5 +18,8 @@ export class SignUpServiceService {
 
   userSignUp(customer: Customer): Observable<any> {
     return this.http.post('customer/addNewCustomer', customer);
+  }
+  login(customer:Customer):Observable<any>{
+    return this.http.post(`customer/authenticateLogin`,customer)
   }
 }

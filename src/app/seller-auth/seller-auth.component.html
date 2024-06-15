@@ -1,25 +1,51 @@
-<div class="container">
-  <form [formGroup]="sellerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="customerName">Customer Name</label>
-      <input id="customerName" type="text" class="form-control" formControlName="FirstName">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div *ngIf="!showLogin">
+        <h2>Sign Up</h2>
+        <form [formGroup]="sellerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="customerName">Customer Name</label>
+            <input id="customerName" type="text" class="form-control" formControlName="FirstName">
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input id="address" type="text" class="form-control" formControlName="AddressOne">
+          </div>
+          <div class="form-group">
+            <label for="pinCode">Pin Code</label>
+            <input id="pinCode" type="text" class="form-control" formControlName="ZipCode">
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input id="mobile" type="text" class="form-control" formControlName="Mobile">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" formControlName="Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <div *ngIf="showLogin">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+          <div class="form-group">
+            <label for="Mobile">Mobile</label>
+            <input type="number" class="form-control" id="Mobile" formControlName="Mobile" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" class="form-control" id="login-password" formControlName="Password" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+      </div>
+
+      <button class="btn btn-link w-100 mt-3" (click)="toggleForm()">
+        {{ showLogin ? 'Already have an account? Login' : 'Don\'t have an account? Sign Up' }}
+      </button>
     </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <input id="address" type="text" class="form-control" formControlName="AddressOne">
-    </div>
-    <div class="form-group">
-      <label for="pinCode">Pin Code</label>
-      <input id="pinCode" type="text" class="form-control" formControlName="ZipCode">
-    </div>
-    <div class="form-group">
-      <label for="mobile">Mobile</label>
-      <input id="mobile" type="text" class="form-control" formControlName="Mobile">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input id="password" type="password" class="form-control" formControlName="Password">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
 </div>

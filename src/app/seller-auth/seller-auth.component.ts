@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Customer } from 'src/models/customer';
-import { SignUpServiceService } from '../services/sign-up-service.service';
+import { Customer } from 'src/models/customer'; 
+import { SignUpServiceService } from '../services/sign-up-service.service'; // Adjust the path if necessary
 
 @Component({
   selector: 'app-seller-auth',
@@ -9,11 +9,14 @@ import { SignUpServiceService } from '../services/sign-up-service.service';
   styleUrls: ['./seller-auth.component.css']
 })
 export class SellerAuthComponent implements OnInit {
+  // FormGroupDirective.form: FormGroup<any>
   sellerForm!: FormGroup;
+  loginForm!: FormGroup;
+  showLogin:boolean=true
 
   constructor(
     private fb: FormBuilder,
-    private signUpService: SignUpServiceService  // Correct injection
+    private signUpService: SignUpServiceService // Ensure the service is correctly injected
   ) {}
 
   ngOnInit(): void {
@@ -24,6 +27,15 @@ export class SellerAuthComponent implements OnInit {
       Mobile: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       Password: ['', [Validators.required, Validators.minLength(6)]]
     });
+
+    this.loginForm = this.fb.group({
+      Mobile: ['', Validators.required],
+      Password: ['', Validators.required]
+    });
+  }
+  
+  toggleForm() {
+    this.showLogin = !this.showLogin;
   }
 
   onSubmit() {
@@ -32,13 +44,27 @@ export class SellerAuthComponent implements OnInit {
       this.signUpService.userSignUp(formData).subscribe(
         (response) => {
           console.log('Form Submitted!', response);
-          // Handle response as needed
         },
         (error) => {
           console.error('Error submitting form:', error);
-          // Handle error as needed
         }
       );
+    }
+  }
+
+  onLoginSubmit() {
+    if (this.loginForm.valid) {
+      const loginData = this.loginForm.value;
+      console.log('Login Form Data', loginData);
+      this.signUpService.login(loginData).subscribe(
+        (response) => {
+          console.log('Login Successful!', response);
+        },
+        (error) => {
+          console.error('Error during login:', error);
+        }
+      );
+      
     }
   }
 }

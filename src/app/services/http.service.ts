@@ -13,25 +13,10 @@ export class  HttpApiService {
     constructor(
         private httpClient: HttpClient,
     ) { 
-        // setInterval(this.checkUpdatesInCode, 10000);
     }
-
+    
     private formatErrors(error: any) {
         return throwError(error.error);
-    }
-
-    // getUserFromLocalStorage(){
-    //     if (localStorage.getItem('token')){
-    //       this.user = JSON.parse(window.atob(localStorage.getItem('token')));
-    //     }
-    //     return this.user
-    //   }
-    getUserFromLocalStorage() {
-        const token = localStorage.getItem('token');
-        if (token) {
-            this.user = JSON.parse(window.atob(token));
-        }
-        return this.user;
     }
 
     createAuthorizationHeader() {
@@ -44,6 +29,16 @@ export class  HttpApiService {
         headers['Access-Control-Allow-Credentials'] =  'true'
         const head = new HttpHeaders({'UserId':userId,'RoleId':RoleId})
         return head
+    }
+
+        post(path: string, body: Object = {}): Observable<any> {
+        let headers = this.createAuthorizationHeader();
+        const options = { headers: headers }
+        return this.httpClient.post(
+            `${environment.apiUrl}${path}`,
+            body,
+            options
+        ).pipe(catchError(this.formatErrors));
     }
 
     get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
@@ -62,15 +57,13 @@ export class  HttpApiService {
             options
         ).pipe(catchError(this.formatErrors));
     }
-
-    post(path: string, body: Object = {}): Observable<any> {
-        let headers = this.createAuthorizationHeader();
-        const options = { headers: headers }
-        return this.httpClient.post(
-            `${environment.apiUrl}${path}`,
-            body,
-            options
-        ).pipe(catchError(this.formatErrors));
+    getUserFromLocalStorage() {
+        const token = localStorage.getItem('token');
+        if (token) {
+            this.user = JSON.parse(window.atob(token));
+        }
+        return this.user;
     }
+
     
 }
