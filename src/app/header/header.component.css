@@ -1,4 +1,64 @@
-.container{
-    margin-right: 5px;
-    margin-left: 5px;
-   }
+.navbar-facebook {
+    background-color: #1877f2; /* Facebook Blue */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navbar-facebook .navbar-brand,
+.navbar-facebook .nav-link,
+.navbar-facebook .dropdown-toggle {
+    color: white;
+}
+
+.navbar-facebook .navbar-brand {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-family: 'Arial', sans-serif; /* Change to the desired font family */
+    font-weight: bold; /* Optional: make the text bold */
+}
+
+.navbar-facebook .nav-link.active {
+    color: #dfe3ee; /* A lighter shade for the active link */
+}
+
+.navbar-facebook .nav-link:hover,
+.navbar-facebook .dropdown-item:hover {
+    color: #dfe3ee; /* Hover effect color */
+}
+
+.navbar-facebook .dropdown-menu {
+    background-color: #1877f2; /* Facebook Blue */
+    border: none;
+}
+
+.navbar-facebook .dropdown-item {
+    color: white;
+}
+
+.navbar-facebook .dropdown-item:hover {
+    background-color: #145dbf; /* A darker shade for hover effect */
+}
+
+.btn-facebook-search {
+    background-color: #42b72a; /* Facebook's Green for buttons */
+    color: white;
+    border: none;
+}
+
+.btn-facebook-search:hover {
+    background-color: #36a420; /* A darker shade for hover effect */
+}
+
+.form-inline {
+    display: flex;
+    flex: 1;
+}
+
+.form-inline .form-control {
+    flex: 1;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

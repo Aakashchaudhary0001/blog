@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpApiService } from './services/http.service';
 import { SignUpServiceService } from './services/sign-up-service.service';
+import { SellerHomeComponent } from './seller-home/seller-home.component';
  
 
 
@@ -20,7 +21,8 @@ import { SignUpServiceService } from './services/sign-up-service.service';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SellerAuthComponent, 
+    SellerAuthComponent,
+    SellerHomeComponent, 
    
   ],
   imports: [
