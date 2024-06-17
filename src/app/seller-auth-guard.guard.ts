@@ -15,9 +15,6 @@ export class SellerAuthGuardGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.signUpService.isSellerLoggedIn().pipe(
-      // pipe() ek operator hai jo RxJS me observables par multiple operations chain 
-      // karne ke liye use hota hai. Isme hum observables se emit hone wale data par mapping, 
-      // filtering jaise operations apply kar sakte hain.
       map((isLoggedIn: boolean) => {
         if (isLoggedIn) {
           return true;
@@ -28,3 +25,27 @@ export class SellerAuthGuardGuard implements CanActivate {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // pipe() ek operator hai jo RxJS me observables par multiple operations chain 
+      // karne ke liye use hota hai. Isme hum observables se emit hone wale data par mapping, 
+      // filtering jaise operations apply kar sakte hain.
