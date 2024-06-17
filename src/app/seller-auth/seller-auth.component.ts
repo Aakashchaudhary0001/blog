@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Customer } from 'src/models/customer';
 import { SignUpServiceService } from '../services/sign-up-service.service';
 import { Router } from '@angular/router';
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-seller-auth',
@@ -13,7 +13,7 @@ export class SellerAuthComponent implements OnInit {
   sellerForm!: FormGroup;
   loginForm!: FormGroup;
   showLogin: boolean = true;
-  isLoginError = new EventEmitter<boolean>();
+
 
   constructor(
     private fb: FormBuilder,
@@ -40,7 +40,7 @@ export class SellerAuthComponent implements OnInit {
   toggleForm() {
     this.showLogin = !this.showLogin;
   }
-  onSubmit() {
+  singnUp() {
     if (this.sellerForm.valid) {
       const data: Customer = this.sellerForm.value;
       this.signUpService.userSignUp(data).subscribe(
@@ -67,27 +67,22 @@ export class SellerAuthComponent implements OnInit {
     }
   }
 
-  onLoginSubmit() {
+  login() {
     if (this.loginForm.valid) {
       const data = this.loginForm.value;
-      console.log('Login Form Data', data);
       this.signUpService.login(data).subscribe(
         (response) => {
           if (response && response.status === 200 && response.message === 'login successfully.') {
-            this.isLoginError.emit(false);
             localStorage.setItem('seller', JSON.stringify(response.data));
             this.signUpService.setSellerLoggedIn(true);
             this.router.navigate(['seller-home']);
           } else {
             console.log('Login failed');
-            this.isLoginError.emit(true);
           }
           console.log('Result ', response);
         },
         (error) => {
           console.error('Login error:', error);
-          this.isLoginError.emit(true);
-       
         }
       );
     }

@@ -10,6 +10,7 @@ const routes: Routes = [
 
 {path: 'seller-auth',
  component: SellerAuthComponent},
+ 
 {path: 'seller-home', 
 component: SellerHomeComponent,
 canActivate:[SellerAuthGuardGuard]}
