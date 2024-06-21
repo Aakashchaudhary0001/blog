@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpApiService } from './services/http.service';
 import { SignUpServiceService } from './services/sign-up-service.service';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
+import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
  
 
 
@@ -22,7 +23,8 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
     HeaderComponent,
     HomeComponent,
     SellerAuthComponent,
-    SellerHomeComponent, 
+    SellerHomeComponent,
+    SellerAddProductComponent, 
    
   ],
   imports: [

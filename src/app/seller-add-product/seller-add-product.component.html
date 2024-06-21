@@ -1,0 +1,232 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12 register-sec pb-0 pt-0">
+      <h2 class="text-center text-uppercase">Add Product</h2>
+      <form [formGroup]="sellerForm" (ngSubmit)="addProduct()">
+        <!-- First Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="name">PRODUCT NAME</label>
+            <input id="name" type="string" class="form-control" formControlName="name">
+            <div *ngIf="sellerForm.get('name')!.touched && sellerForm.get('name')!.invalid" class="invalid-feedback d-block">
+              Product Name is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="SubCategoryId">SubCategoryId: 2</label>
+            <input id="SubCategoryId" type="number" class="form-control" formControlName="SubCategoryId">
+            <div *ngIf="sellerForm.get('SubCategoryId')!.touched && sellerForm.get('SubCategoryId')!.invalid" class="invalid-feedback d-block">
+              SubCategoryId is required
+            </div>
+          </div>
+        </div>
+        <!-- Second Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="videolink">YOUTUBE VIDEO LINK</label>
+            <input id="videolink" type="text" class="form-control" formControlName="videolink">
+            <div *ngIf="sellerForm.get('videolink')!.touched && sellerForm.get('videolink')!.invalid" class="invalid-feedback d-block">
+              YouTube Video Link is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="description">DESCRIPTION</label>
+            <input id="description" type="text" class="form-control" formControlName="description">
+            <div *ngIf="sellerForm.get('description')!.touched && sellerForm.get('description')!.invalid" class="invalid-feedback d-block">
+              Description is required
+            </div>
+          </div>
+        </div>
+        <!-- Third Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="price">PRICE</label>
+            <input id="price" type="number" class="form-control" formControlName="price">
+            <div *ngIf="sellerForm.get('price')!.touched && sellerForm.get('price')!.invalid" class="invalid-feedback d-block">
+              Price is required and must be a valid number
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="Tags">SEARCH TAG</label>
+            <input id="Tags" type="text" class="form-control" formControlName="Tags">
+            <div *ngIf="sellerForm.get('Tags')!.touched && sellerForm.get('Tags')!.invalid" class="invalid-feedback d-block">
+              Search Tag is required
+            </div>
+          </div>
+        </div>
+        <!-- Fourth Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="landing_rate">LANDING RATE</label>
+            <input id="landing_rate" type="number" class="form-control" formControlName="landing_rate">
+            <div *ngIf="sellerForm.get('landing_rate')!.touched && sellerForm.get('landing_rate')!.invalid" class="invalid-feedback d-block">
+              Landing Rate is required and must be a valid number
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="stock">STOCK</label>
+            <input id="stock" type="number" class="form-control" formControlName="stock">
+            <div *ngIf="sellerForm.get('stock')!.touched && sellerForm.get('stock')!.invalid" class="invalid-feedback d-block">
+              Stock is required and must be a valid number
+            </div>
+          </div>
+        </div>
+        <!-- Fifth Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="newprice">NEW PRICE</label>
+            <input id="newprice" type="number" class="form-control" formControlName="newprice">
+            <div *ngIf="sellerForm.get('newprice')!.touched && sellerForm.get('newprice')!.invalid" class="invalid-feedback d-block">
+              New Price is required and must be a valid number
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="newstock">NEW STOCK</label>
+            <input id="newstock" type="number" class="form-control" formControlName="newstock">
+            <div *ngIf="sellerForm.get('newstock')!.touched && sellerForm.get('newstock')!.invalid" class="invalid-feedback d-block">
+              New Stock is required and must be a valid number
+            </div>
+          </div>
+        </div>
+        <!-- Sixth Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="WarrantyInDays">WARRANTY IN DAYS</label>
+            <input id="WarrantyInDays" type="number" class="form-control" formControlName="WarrantyInDays">
+            <div *ngIf="sellerForm.get('WarrantyInDays')!.touched && sellerForm.get('WarrantyInDays')!.invalid" class="invalid-feedback d-block">
+              Warranty In Days is required and must be a valid number
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="dhc_category">DHC CATEGORY 1</label>
+            <input id="dhc_category" type="number" class="form-control" formControlName="dhc_category">
+            <div *ngIf="sellerForm.get('dhc_category')!.touched && sellerForm.get('dhc_category')!.invalid" class="invalid-feedback d-block">
+              DHC Category is required
+            </div>
+          </div>
+        </div>
+        <!-- Seventh Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="alternate_name">ALTERNATE NAME</label>
+            <input id="alternate_name" type="text" class="form-control" formControlName="alternate_name">
+            <div *ngIf="sellerForm.get('alternate_name')!.touched && sellerForm.get('alternate_name')!.invalid" class="invalid-feedback d-block">
+              Alternate Name is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="CanSeeRole">CAN SEE ROLE</label>
+            <input id="CanSeeRole" type="number" class="form-control" formControlName="CanSeeRole">
+            <div *ngIf="sellerForm.get('CanSeeRole')!.touched && sellerForm.get('CanSeeRole')!.invalid" class="invalid-feedback d-block">
+              Can See Role is required and must be between 1 and 10
+            </div>
+          </div>
+        </div>
+        <!-- Eighth Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="DiscountPercentage">DISCOUNT PERCENTAGE</label>
+            <input id="DiscountPercentage" type="number" class="form-control" formControlName="DiscountPercentage">
+            <div *ngIf="sellerForm.get('DiscountPercentage')!.touched && sellerForm.get('DiscountPercentage')!.invalid" class="invalid-feedback d-block">
+              Discount Percentage is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="DisplayPriority">DISPLAY PRIORITY</label>
+            <input id="DisplayPriority" type="number" class="form-control" formControlName="DisplayPriority">
+            <div *ngIf="sellerForm.get('DisplayPriority')!.touched && sellerForm.get('DisplayPriority')!.invalid" class="invalid-feedback d-block">
+              Display Priority is required
+            </div>
+          </div>
+        </div>
+        <!-- Ninth Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="IsActive">IS ACTIVE</label>
+            <input id="IsActive" type="number" class="form-control" formControlName="IsActive">
+            <div *ngIf="sellerForm.get('IsActive')!.touched && sellerForm.get('IsActive')!.invalid" class="invalid-feedback d-block">
+              Is Active is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="max_quantity">MAX QUANTITY</label>
+            <input id="max_quantity" type="number" class="form-control" formControlName="max_quantity">
+            <div *ngIf="sellerForm.get('max_quantity')!.touched && sellerForm.get('max_quantity')!.invalid" class="invalid-feedback d-block">
+              Max Quantity is required
+            </div>
+          </div>
+        </div>
+        <!-- Tenth Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="min_quantity">MIN QUANTITY</label>
+            <input id="min_quantity" type="number" class="form-control" formControlName="min_quantity">
+            <div *ngIf="sellerForm.get('min_quantity')!.touched && sellerForm.get('min_quantity')!.invalid" class="invalid-feedback d-block">
+              Min Quantity is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="ModelName">MODEL NAME</label>
+            <input id="ModelName" type="text" class="form-control" formControlName="ModelName">
+            <div *ngIf="sellerForm.get('ModelName')!.touched && sellerForm.get('ModelName')!.invalid" class="invalid-feedback d-block">
+              Model Name is required
+            </div>
+          </div>
+        </div>
+        <!-- Eleventh Form Row -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="product_code">PRODUCT CODE</label>
+            <input id="product_code" type="text" class="form-control" formControlName="product_code">
+            <div *ngIf="sellerForm.get('product_code')!.touched && sellerForm.get('product_code')!.invalid" class="invalid-feedback d-block">
+              Product Code is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="SellerDetail">SELLER DETAIL</label>
+            <input id="SellerDetail" type="text" class="form-control" formControlName="SellerDetail">
+            <div *ngIf="sellerForm.get('SellerDetail')!.touched && sellerForm.get('SellerDetail')!.invalid" class="invalid-feedback d-block">
+              Seller Detail is required
+            </div>
+          </div>
+        </div>
+        <!-- Twelfth Form Row -->
+        <div class="row">
+          <!--  <div class="col-md-6 mb-3">
+            <label for="delivery_charges">DELIVERY CHARGES</label>
+            <input id="delivery_charges" type="number" class="form-control" formControlName="delivery_charges">
+            <div *ngIf="sellerForm.get('delivery_charges')!.touched && sellerForm.get('delivery_charges')!.invalid" class="invalid-feedback d-block">
+              Delivery Charges is required
+            </div>
+          </div> -->
+          <div class="col-md-6 mb-3">
+            <label for="CategoryId:">CategoryId:</label>
+            <input id="CategoryId:" type="number" class="form-control" formControlName="CategoryId:">
+            <div *ngIf="sellerForm.get('CategoryId:')!.touched && sellerForm.get('partnerId')!.invalid" class="invalid-feedback d-block">
+              Partner ID is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="ImageWidth">IMAGE WIDTH</label>
+            <input id="ImageWidth" type="text" class="form-control" formControlName="ImageWidth">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="ImageHeight">IMAGE HEIGHT</label>
+            <input id="ImageHeight" type="text" class="form-control" formControlName="ImageHeight">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="image">UPLOAD IMAGE</label>
+            <input id="image" type="file" class="form-control-file" formControlName="image">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-block">Add Product</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

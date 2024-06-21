@@ -1,0 +1,29 @@
+.form-container {
+    padding-left: 15px; /* Adjust padding as needed */
+    padding-right: 15px; /* Adjust padding as needed */
+  }
+  
+  .form-row-custom {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .form-container .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .form-container .col-md-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .btn-register {
+    display: block;
+    width: 100%;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
