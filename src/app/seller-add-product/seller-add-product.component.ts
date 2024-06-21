@@ -53,15 +53,21 @@ export class SellerAddProductComponent implements OnInit {
   addProduct(): void {
     if (this.sellerForm.valid) {
       const data: Product = this.sellerForm.value;
-      this.productService.createProduct(data).subscribe(
-        (res) => {
+      const formData = new FormData();
+      
+      Object.keys(this.sellerForm.controls).forEach(key => {
+        formData.append(key, this.sellerForm.get(key)?.value);
+      });
+
+      this.productService.createProduct(formData).subscribe(
+        (res: any) => {
           if (res && res['status'] === 200) {
             console.log('Product added successfully');
           } else {
             console.log('Failed to add product');
           }
         },
-        (error) => {
+        (error: any) => {
           console.error('Error adding product:', error);
         }
       );
