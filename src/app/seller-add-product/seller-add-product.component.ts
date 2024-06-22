@@ -48,16 +48,23 @@ export class SellerAddProductComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   addProduct(): void {
     if (this.sellerForm.valid) {
-      const data: Product = this.sellerForm.value;
       const formData = new FormData();
-      
-      Object.keys(this.sellerForm.controls).forEach(key => {
-        formData.append(key, this.sellerForm.get(key)?.value);
+      const formValues = this.sellerForm.getRawValue();
+
+      Object.keys(formValues).forEach(key => {
+        formData.append(key, formValues[key]);
       });
+
+      formData.set('DisplayPriority', '1');
+
+      formData.set('alternate_name', formValues['name']);
+      formData.set('SellerDetail', "1"); // ye id change krlo apne hisab se localstorage se nikal k bhi daal sakte ho
+      formData.set('ModelName', formValues['name']);
+      formData.set('product_code', formValues['name']);
 
       this.productService.createProduct(formData).subscribe(
         (res: any) => {
@@ -71,9 +78,10 @@ export class SellerAddProductComponent implements OnInit {
           console.error('Error adding product:', error);
         }
       );
-      console.log('Submitted Data:', data);
+      console.log('Submitted Data:', formValues);
     } else {
       console.log('Form is invalid');
     }
   }
+
 }
